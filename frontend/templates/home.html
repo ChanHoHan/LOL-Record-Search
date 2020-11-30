@@ -2,11 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        
+        .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .content {
+          font-family: system-ui, serif;
+          font-size: 2rem;
+          padding: 3rem;
+          border-radius: 1rem;
+          background: #0067a3;
+        }
+
+        .img_loc
+        {
+            text-align: center;
+        }
+        .tft_font
+        {
+            font-size: xx-large;
+            text-align: center;
+            font-weight: 900;
+        }
+        button{
+            height:20px; 
+            width:100px; 
+            margin: -20px -50px; 
+            position: relative;
+            top:50%; 
+            left:50%
+        }
+
+        input{
+            height: 20px;
+        }
+        
+        img{
+            height: 300px;
+            width: 300px;
+        }
+       
+    </style>
     <title>home</title>
 </head>
 <body>
-    <form method="POST" action = "http://127.0.0.1:5000/api">
-        <p>User name : <input type = "text" name = "Name"/>></p>
+    <br>
+    <br>
+    <br>
+        <div class = "outwrapper">
+    <div class = "img_loc">
+        <img src="{{url_for('static', filename='img/tft.png')}}" class = "static" alt= "tft">
+    </div>
+    <br>
+    <div class="tft_font">
+        TFT 전적 검색 ㄷㄷㄷㅈ ! !
+    </div>
+        <br>
+        <br>
+        <div class = "wrapper">
+            <form method="POST" action = "http://127.0.0.1:5000/api">
+
+            <div class = "content">
+            <p>
+                <input type = "text" name = "Name"/>
+            </p>
+                <button type = "submit" >검색</button>
+            </div>
+
     </form>
+        </div>
+
+
+        </div>
 </body>
 </html>

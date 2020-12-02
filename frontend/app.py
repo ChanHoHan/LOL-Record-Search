@@ -9,10 +9,20 @@ def main():
 
 @app.route("/api", methods = ['POST'])
 def api():
+    li = []
+    info = dict()
+    info["puuid"] = "7uly"
+    info["skin_id"]  = "galaxy"
+    info["last_round"] = "3"
+    info["placement"] = "4"
+    info["time_eliminated"] = "23:23"
+    info["gold_left"] = "2000"
+    li.append(info)
     if request.method == 'POST':
         result = request.form
         print(dict(result))
-        return render_template("record.html", result = dict(result)['Name'])
+        return render_template("record.html", result = li)
+
 
 if __name__ == "__main__":
     app.run()

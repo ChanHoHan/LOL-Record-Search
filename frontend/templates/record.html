@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>score</title>
+  <style>
+    header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+    section{
+      display: flex;
+      flex-direction: column;
+    }
+    footer{
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
-    {{result}}
+
+  <header>
+    <h1>TFT 전적 검색 두두둥장 ! ! </h1>
+  </header>
+  <!--
+  <nav>
+    nav
+  </nav>
+  -->
+  <section>
+     
+    <table border = 1>
+      <tr>
+        <th> 아이디</th>
+        <th> 스킨 </th>
+        <th> 죽은 라운드</th>
+        <th> 등수 </th>
+        <th> 죽은 시간</th>
+        <th> 남은 골드</th>
+      </tr>
+      {% for data in result %}
+        <tr>
+            <th> {{data["puuid"]}} </th>
+            <th> {{data["skin_id"]}} </th>
+            <th> {{data["last_round"]}} </th>
+            <th>{{data["placement"]}} </th>
+            <th> {{data["time_eliminated"]}} </th>
+            <th> {{data["gold_left"]}} </th>
+        </tr>
+        {% endfor %}
+    </table>
+    
+  </section>
+  <footer>
+  </footer>
+
 </body>
+
 </html>
